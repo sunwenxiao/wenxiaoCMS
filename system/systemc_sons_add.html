@@ -1,0 +1,43 @@
+{template 'header_mini'}
+<style>
+.imgbox img{ width:74px;}
+</style>
+<form method="post" onsubmit="return check()">
+  <table width="100%" border="0">
+    <tr>
+      <th width="34%">权限名称<input type="hidden" name="op"  value="new"/></th>
+      <td width="66%"><input type="text" name="title"  value="{$data['title']}"/></td>
+    </tr>
+    <tr>
+      <th>模块(m)</th>
+		<td>
+      		<select name="m">
+      		{loop get_navs() $v}
+      			<option value="{$v['m']}" {if $v['m']==$data['m']}selected="selected"{/if}>{$v['title']}</option>
+			{/loop}
+      		</select>
+		</td>
+    </tr>
+    <tr>
+      <th>动作(a)</th>
+      <td><input type="text" name="a"  value="{$data['a']}"/></td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:center"><input type="submit" name="do_submit" value="保存" style="width:50px;" />
+        <input type="button" name="button" onclick="parent.dialog_close()" value="取消" style="width:50px; margin-left:50px;" /></td>
+    </tr>
+  </table>
+</form>
+<?php if(!empty($msg)){ echo $msg;} ?> 
+<script type="text/javascript">
+function check(){
+	msg="";
+	if($('input[name="title"]').val()=="")msg="请填写权限名称!";
+	if($('input[name="m"]').val()==""&&msg=="")msg="请填写权限模块!";
+	if(msg!=""){
+		ui.alert(msg);
+		return false;
+	}
+}
+</script> 
+{template 'footer_mini'}
