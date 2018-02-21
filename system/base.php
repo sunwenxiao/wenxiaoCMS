@@ -31,7 +31,6 @@ define('D_BUG', 1);
 D_BUG ? error_reporting(E_ALL) : error_reporting(0);
 
 //初始参数设置
-@set_magic_quotes_runtime(0);
 @define('MAGIC_QUOTES_GPC' ,get_magic_quotes_gpc());
 
 //session设置,0为关,大于0开启
