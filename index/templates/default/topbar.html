@@ -1,0 +1,50 @@
+  <!-- ============================================================== -->
+        <!-- Top header  -->
+        <!-- ============================================================== -->
+        <div class="topbar">
+            <div class="header6">
+                <div class="container po-relative">
+                    <nav class="navbar navbar-expand-lg h6-nav-bar">
+                        <a href="javascript:void(0)" class="navbar-brand"><img src="{load_app_static()}{$logo_path}" alt="{$logo_alt}" /></a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#h6-info" aria-controls="h6-info" aria-expanded="false" aria-label="Toggle navigation"><span class="ti-menu"></span></button>
+                        <div class="collapse navbar-collapse hover-dropdown font-14 ml-auto" id="h6-info">
+                            <ul class="navbar-nav ml-auto">
+                            	{loop $topbar_father $v}
+                            	{if $v['father_type']==0}
+                            	<li class="nav-item">
+                            	<a href="{$v['href']}" target="{$v['target']}" class="nav-link">Documentation</a>
+                            	</li>
+                            	{else if $v['father_type']==1 }
+                                <li class="nav-item dropdown mega-dropdown" onmouseenter="get_son_topbar({$v['id']})"> 
+                                <a class="nav-link dropdown-toggle" href="{$v['href']}" target="{$v['target']}"  id="h6-mega-dropdown{$v['id']}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                                  {$v['name']} <i class="fa fa-angle-down m-l-5"></i>
+                                </a>
+                                <div class="dropdown-menu b-none font-14 animated fadeInUp" aria-labelledby="h6-mega-dropdown{$v['id']}">
+                                    <div id="son_topbar_{$v['id']}"  class="row">
+                                   
+                                    </div>
+                                </div>
+                                </li>
+                                {else}
+                                <li class="nav-item dropdown" onmouseenter="get_son_topbar({$v['id']})"> 
+	                                <a class="nav-link dropdown-toggle" href="{$v['href']}" target="{$v['target']}"  id="h6-dropdown{$v['id']}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                                {$v['name']}  <i class="fa fa-angle-down m-l-5"></i>
+	                            	</a>
+		                            <ul class="b-none dropdown-menu font-14 animated fadeInUp" id="son_topbar_{$v['id']}">
+		                               
+		                        	</ul>
+                    			</li>
+                                {/if}
+                                {/loop}
+                   
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- Top header  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <script src="{load_app_static()}js/topbar.js"></script> 

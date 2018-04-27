@@ -1,6 +1,43 @@
 <?php defined('WENXIAOCMS') or exit('Access denied!'); ?>
-<html>
-<body>
-hello world ^_^ !
-</body>
-</html>
+<?php include template('header'); ?>
+<?php include template('preloader'); ?>
+    
+    
+    <div id="main-wrapper">
+      	<?php include template('topbar'); ?>
+        
+        
+        <div class="page-wrapper">
+            
+            
+            
+            <div class="container-fluid">
+                
+                
+                
+                <h1></h1>
+                
+                
+                
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    <?php include template('footer'); ?>

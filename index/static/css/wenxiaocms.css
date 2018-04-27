@@ -1,0 +1,47 @@
+/*
+Template Name: Wrapkit
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*============================================================== 
+ You can write your style here and overwrite our style
+ ============================================================== */
+/*******************
+Header 6
+*******************/
+.h6-topbar .authentication-box {
+  margin-bottom: 0px;
+  padding: 10px 0; }
+  .h6-topbar .authentication-box li {
+    display: inline-block; }
+    .h6-topbar .authentication-box li a {
+      padding: 3px 15px;
+      display: block;
+      color: #8d97ad;
+      font-weight: 400;
+      border-bottom: 0px !important; }
+      .h6-topbar .authentication-box li a:hover {
+        color: #188ef4; }
+      .h6-topbar .authentication-box li a:last-child {
+        padding-right: 0px; }
+    .h6-topbar .authentication-box li i {
+      font-size: 20px;
+      vertical-align: text-bottom; }
+
+.h6-nav-bar {
+  padding: 0px; }
+  .h6-nav-bar .navbar-nav .nav-link {
+    padding: 35px 15px;
+    color: #8d97ad; }
+  .h6-nav-bar .navbar-nav .nav-item:hover .nav-link, .h6-nav-bar .navbar-nav .nav-item.active .nav-link {
+    color: #263238; }
+  .h6-nav-bar .act-buttons .btn {
+    margin: 10px 0 10px 10px; }
+
+@media (max-width: 1023px) {
+  .h6-nav-bar .navbar-nav .nav-link {
+    padding: 15px 15px; }
+  .h6-nav-bar .act-buttons .btn {
+    margin: 10px 0 10px 0px; } }
+ 

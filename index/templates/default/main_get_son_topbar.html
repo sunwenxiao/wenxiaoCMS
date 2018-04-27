@@ -1,0 +1,39 @@
+										<div class="col-lg-<?php echo $father_info['col-lg'] ?> inside-bg hidden-md-down">
+                                            <div class="bg-img" style="background-image:url({load_app_static()}<?php echo $father_info['bg-img']; ?>)">
+                                                <h3 class="text-white font-light">{$father_info['title']}</h3>
+                                            </div>
+                                        </div>
+                                        <!-- 循环子导航 -->
+                                        <!-- 如果是带图片背景的则默认默认两级导航直接取出 -->
+                                        {if $father_info['father_type']==1}
+                                        {loop $son_topbar_list_info $son_info}
+                                        <div class="col-lg-<?php echo $son_info['col-lg'] ?> col-md-<?php echo $son_info['col-md'] ?>">
+                                                <ul class="list-style-none">
+                                                    <li><h6>{$son_info['name']}</h6></li>
+                                                    <?php if (count($son_info['son_son'])>0){ 
+                                                    		foreach ($son_info['son_son'] as $son_son_info){?>
+                                                     <li><a href="{$son_son_info['href']}" target="{$son_son_info['target']}" >{$son_son_info['name']}</a></li>
+                                                    <?php }}?>
+                                                </ul>
+                                        </div>
+                                        {/loop}
+                                        {else if $father_info['father_type']==2}
+                                        {loop $son_topbar_list_info $son_info}
+                                        {if $son_info['name'] }
+                                        {if $son_info['is_hanve_son']>0}	
+                                        <li class="dropdown-submenu" onmouseenter="get_son_topbar({$son_info['id']})"> 
+                                        <a class="dropdown-toggle dropdown-item" href="{$son_info['href']}" target="{$son_info['target']}"  aria-haspopup="true" aria-expanded="false">
+                                        {$son_info['name']} 
+                                        <i class="fa fa-angle-right ml-auto"></i>
+                                        </a>
+			                                <ul class="dropdown-menu font-14 b-none animated flipInY" id="son_topbar_{$son_info['id']}">
+			                                </ul>
+		                            	</li>
+                                        {else}
+		                                <li><a class="dropdown-item" href="{$son_info['href']}" target="_blank">{$son_info['name']}</a></li>
+		                                {/if}
+		                                {else}
+		                                <li class="divider" role="separator"></li>
+		                                {/if}
+		                            	{/loop}
+                                        {/if}
