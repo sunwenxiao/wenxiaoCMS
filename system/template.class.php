@@ -50,7 +50,14 @@ class template{
 		$tpl_file   = CMS_ROOT.'/'.APPLICATION.'/templates/default/'."$filename.html";
 		if(!file_exists($tpl_file)){
 			file_exists($cache_file) && @unlink($cache_file);
-			exit("$filename.html not exist!");
+			//如果没有模板文件则创建
+			$str=
+			'<html>
+		<body>
+		模板文件生成好了赶快来吧你的HTML放进来吧^_^ !
+		</body>
+		</html>';
+			file_put_contents($tpl_file,str_replace("\t",'',$str));
 		}
 		if(!file_exists($cache_file) or filemtime($cache_file) < filemtime($tpl_file) or filesize($cache_file) < filesize($tpl_file)){
 			$cache_content = file_get_contents($tpl_file);
