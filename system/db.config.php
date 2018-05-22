@@ -1,9 +1,9 @@
 <?php
 defined('WENXIAOCMS') or exit('Access denied!');
 //数据库配置
-define('DBHOST', '127.0.0.1');
+define('DBHOST', '192.210.170.199');
 define('DBUSER', 'root');
-define('DBPW', '');
+define('DBPW', 'wenxiao795');
 define('DBNAME', 'wenxiaocms_db');
 define('DBCHARSET', 'utf8');
 define('DBPREFIX', '');
