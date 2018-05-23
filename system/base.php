@@ -1,8 +1,8 @@
 <?php
 /**
  * base.php             CMS框架入口文件
- * @copyright			(C) 2013-2015 alex
- * @lastmodify			2013-7-1
+ * @copyright			(C) 2016-2018 wenxiaoCMS
+ * @sunwenxiao			2016-7-1
  */
 defined('WENXIAOCMS') or exit('Access denied!');
 
