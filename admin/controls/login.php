@@ -3,7 +3,7 @@ class login extends admincontroller{
 	//登录页
 	function on_index(){
 	    $adminlogin = array();
-	    $adminlogin['title'] = '安卓任务后台';
+	    $adminlogin['title'] = '欢迎使用文晓框架';
 	    $adminlogin['heading'] = '登陆';
 		$this->assign('adminlogin',$adminlogin);
 		$this->display('admin_login');
